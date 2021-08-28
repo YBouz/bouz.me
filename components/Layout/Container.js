@@ -35,8 +35,17 @@ const Container = ({ children, ...customMeta }) => {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <Flex as="main" flexDir="column" align="center" px={8} mt={'140px'}>
-        {children}
+      <Flex
+        as="main"
+        flexDir="column"
+        align="center"
+        w="full"
+        px={4}
+        mt={'140px'}
+      >
+        <Flex flexDir="column" maxW="80vh" w="full">
+          {children}
+        </Flex>
       </Flex>
     </Fragment>
   );

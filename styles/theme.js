@@ -9,8 +9,8 @@ const config = {
 const theme = extendTheme({
   config,
   fonts: {
-    heading: `'Inter', sans-serif`,
-    body: `'Inter', sans-serif`
+    heading: `'Montserrat', sans-serif`,
+    body: `'Montserrat', sans-serif`
   },
   fontWeights: {
     normal: 400,
