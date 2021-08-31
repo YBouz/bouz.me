@@ -4,19 +4,12 @@ import {
   Badge,
   Box,
   Button,
-  Flex,
   Heading,
   HStack,
-  IconButton,
-  SimpleGrid,
-  Tag,
-  Text,
-  Tooltip,
-  useColorModeValue,
-  VStack
+  Stack,
+  Text
 } from '@chakra-ui/react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
-import { format, parseISO } from 'date-fns';
 import { useRouter } from 'next/router';
 
 const ProjectItem = ({
@@ -33,49 +26,43 @@ const ProjectItem = ({
 
   return (
     <Link href={`/projects/${slug}`} passHref>
-      <SimpleGrid
-        columns={2}
-        spacing={8}
-        cursor="pointer"
-        _hover={{ opacity: 0.9, transform: 'scale(1.01)' }}
-      >
+      <Stack spacing={4} cursor="pointer" _hover={{ opacity: 0.9 }}>
         <Box>
+          <Heading as="h2" size="lg" fontWeight="medium" mb={4}>
+            {title}
+          </Heading>
+
           <Image
             src={image}
             alt={`${title} Image`}
             width={2120 / 2}
             height={1157 / 2}
           />
-          {tags.map((tag, i) => (
-            <Tag key={i} m={1}>
-              {tag}
-            </Tag>
-          ))}
         </Box>
 
         <Box>
-          <Heading as="h2" size="lg" fontWeight="medium" mb={4}>
-            {title}
-          </Heading>
-          <Text>{summary}</Text>
-          <HStack spacing={4} mt={4}>
-            {github && (
-              <Button
-                onClick={() => router.push(github)}
-                leftIcon={<FaGithub />}
-              >
-                GitHub
-              </Button>
-            )}
-            <Button
-              onClick={() => router.push(live)}
-              leftIcon={<FaExternalLinkAlt />}
-            >
-              Preview
-            </Button>
-          </HStack>
+          {tags.map((tag, i) => (
+            <Badge key={i} m={1} colorScheme="blue">
+              {tag}
+            </Badge>
+          ))}
+          <Text mt={2}>{summary}</Text>
         </Box>
-      </SimpleGrid>
+
+        <HStack spacing={4} mt={4}>
+          {github && (
+            <Button onClick={() => router.push(github)} leftIcon={<FaGithub />}>
+              GitHub
+            </Button>
+          )}
+          <Button
+            onClick={() => router.push(live)}
+            leftIcon={<FaExternalLinkAlt />}
+          >
+            Preview
+          </Button>
+        </HStack>
+      </Stack>
     </Link>
   );
 };

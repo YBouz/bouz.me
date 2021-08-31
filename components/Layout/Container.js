@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React, { Fragment } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { Flex } from '@chakra-ui/react';
 
 const Container = ({ children, ...customMeta }) => {
@@ -35,20 +35,21 @@ const Container = ({ children, ...customMeta }) => {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <Flex
-        as="main"
-        flexDir="column"
-        align="center"
-        w="full"
-        px={4}
-        mt={'140px'}
-      >
-        <Flex flexDir="column" maxW="80vh" w="full">
-          {children}
-        </Flex>
+      <Flex as="main" flexDir="column" align="center" p={8} minH="100vh">
+        {children}
       </Flex>
     </Fragment>
   );
 };
 
 export default Container;
+
+{
+  /* <Flex
+  flexDir="column"
+  justify="center"
+  alignItems="start"
+  maxW="2xl"
+  mx="auto"
+></Flex>; */
+}

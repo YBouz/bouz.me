@@ -1,43 +1,62 @@
-import { Divider, Flex, Heading, Text, VStack } from '@chakra-ui/react';
+import {
+  Divider,
+  Flex,
+  Heading,
+  SimpleGrid,
+  SlideFade,
+  Stack,
+  Text,
+  VStack
+} from '@chakra-ui/react';
 
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 import Container from '@/components/Layout/Container';
 import ProjectItem from '@/components/Projectitem';
 import { sortByDate } from 'utils/sort';
 
-const BlogPage = ({ posts }) => {
+const ProjectsPage = ({ projects }) => {
   return (
     <Container
       title="Youssef Bouz - Projects"
       description="A portfolio and showcase of my current relevant work, projects and skills."
     >
-      <Flex
-        flexDir="column"
-        justify="center"
-        alignItems="start"
-        maxW="2xl"
-        mx="auto"
-        mb={4}
-      >
-        <Heading mb={4}>Projects</Heading>
-        <Text maxW={'60ch'}>
-          A portfolio and showcase of my current relevant work, projects and
-          skills.
-        </Text>
-        <VStack mt={8} spacing={4} divider={<Divider />}>
-          {posts.map((frontMatter) => (
-            <ProjectItem key={frontMatter.title} {...frontMatter} />
-          ))}
-        </VStack>
-      </Flex>
+      <Stack spacing={8} mt={'140px'} maxW="4xl">
+        <SlideFade
+          in={true}
+          transition={{ enter: { duration: 0.4, delay: 0.7 } }}
+        >
+          <Heading size="2xl" mb={4}>
+            Projects
+          </Heading>
+          <Text maxW={'60ch'}>
+            A portfolio and showcase of my current relevant work, projects and
+            skills.
+          </Text>
+        </SlideFade>
+
+        <SlideFade
+          in={true}
+          transition={{ enter: { duration: 0.4, delay: 0.8 } }}
+        >
+          <SimpleGrid
+            columns={{ base: 1, md: 2 }}
+            spacing={8}
+            divider={<Divider />}
+          >
+            {projects.map((frontMatter) => (
+              <ProjectItem key={frontMatter.title} {...frontMatter} />
+            ))}
+          </SimpleGrid>
+        </SlideFade>
+      </Stack>
     </Container>
   );
 };
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('projects');
+  const projects = await getAllFilesFrontMatter('projects');
 
-  return { props: { posts: posts.sort(sortByDate) } };
+  return { props: { projects: projects.sort(sortByDate) } };
 }
 
-export default BlogPage;
+export default ProjectsPage;

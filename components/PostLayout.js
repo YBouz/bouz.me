@@ -29,12 +29,10 @@ const PostLayout = ({ children, frontMatter }) => {
       <Flex
         as="article"
         flexDir="column"
-        justify="center"
         alignItems="start"
         maxW="2xl"
-        mx="auto"
-        mb={16}
-        w="full"
+        mt={'140px'}
+        mb={8}
       >
         <Heading>{frontMatter.title}</Heading>
 

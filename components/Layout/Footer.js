@@ -2,6 +2,7 @@ import {
   ButtonGroup,
   Divider,
   Flex,
+  Link,
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
@@ -14,36 +15,32 @@ const Footer = () => {
     <Flex
       as="footer"
       flexDir="column"
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      justify="center"
+      align="center"
+      bg={useColorModeValue('gray.50', 'secondaryBg')}
       w="full"
       p={8}
-      mt={8}
     >
-      <Flex
-        flexDir={{ base: 'column', md: 'row' }}
-        w="full"
-        maxW="50vw"
-        align={{ base: 'center', md: 'flex-start' }}
-        justifyContent="space-between"
-        mx="auto"
-      >
-        <Text mb={{ base: 4, md: 0 }}>
-          &copy; {new Date().getFullYear()} Youssef Bouz
+      <Link href="https://github.com/ybouz/bouz.me" isExternal>
+        <Text fontSize="sm" color="gray" mb={4}>
+          {/* &copy; {new Date().getFullYear()} */}
+          Designed & Built by{' '}
+          <Text as="span" color="twitter.500">
+            Youssef Bouz
+          </Text>
         </Text>
+      </Link>
 
-        <ButtonGroup>
-          {SocialData.map((data, i) => (
-            <SocialButton
-              key={i}
-              label={data.label}
-              href={data.href}
-              icon={data.icon}
-            />
-          ))}
-        </ButtonGroup>
-      </Flex>
-
-      <Divider mt={4} />
+      <ButtonGroup>
+        {SocialData.map((data, i) => (
+          <SocialButton
+            key={i}
+            label={data.label}
+            href={data.href}
+            icon={data.icon}
+          />
+        ))}
+      </ButtonGroup>
     </Flex>
   );
 };

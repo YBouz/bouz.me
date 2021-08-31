@@ -15,8 +15,7 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerFooter,
-  ButtonGroup,
-  Heading
+  ButtonGroup
 } from '@chakra-ui/react';
 import { AiOutlineMenu } from 'react-icons/ai';
 
@@ -29,7 +28,7 @@ import { SocialData } from '../Common/SocialData';
 const Header = () => {
   const router = useRouter();
 
-  const bg = useColorModeValue('gray.50', 'gray.900');
+  const bg = useColorModeValue('gray.50', 'secondaryBg');
 
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -66,15 +65,16 @@ const Header = () => {
       transition="0.6s all ease-out"
     >
       <Flex
+        as="nav"
         w="full"
-        maxW="50vw"
+        maxW={{ base: '80vw', md: '70vw' }}
         alignItems="center"
         justifyContent="space-between"
         mx="auto"
       >
         <Logo />
 
-        <HStack display="flex" alignItems="center" spacing={2}>
+        <HStack spacing={2}>
           <HStack display={{ base: 'none', md: 'inline-flex' }}>
             {HeaderData.map((data, i) => (
               <Button
@@ -109,7 +109,7 @@ const Header = () => {
               onClose={mobileNav.onClose}
             >
               <DrawerOverlay />
-              <DrawerContent>
+              <DrawerContent bgColor={bg}>
                 <DrawerCloseButton />
                 <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
 

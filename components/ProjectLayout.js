@@ -1,22 +1,19 @@
 import { useRouter } from 'next/router';
 import {
   Avatar,
+  Badge,
   Box,
   Button,
   Flex,
   Heading,
   HStack,
   IconButton,
+  Stack,
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
 import { parseISO, format } from 'date-fns';
-import {
-  FaChevronRight,
-  FaEdit,
-  FaExternalLinkAlt,
-  FaGithub
-} from 'react-icons/fa';
+import { FaChevronRight, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 import Container from './Layout/Container';
 
@@ -35,30 +32,26 @@ const ProjectLayout = ({ children, frontMatter }) => {
       <Flex
         as="article"
         flexDir="column"
-        justify="center"
         alignItems="start"
         maxW="2xl"
-        mx="auto"
-        mb={16}
-        w="full"
+        mt={'140px'}
+        mb={8}
       >
-        <Flex
-          flexDir={{ base: 'column', md: 'row' }}
-          justify="space-between"
-          alignItems="start"
-          w="full"
-          mt={2}
-        >
-          <HStack spacing={2} mb={2}>
-            <Heading>{frontMatter.title}</Heading>
-            <Text
-              size="sm"
-              color={useColorModeValue('gray.700', 'gray.300')}
-              ml={2}
-            >
-              {format(parseISO(frontMatter.publishedAt), 'MMMM, yyyy')}
-            </Text>
-          </HStack>
+        <Heading>{frontMatter.title}</Heading>
+
+        <Flex alignItems="center" mt={2}>
+          <Text
+            size="sm"
+            color={useColorModeValue('gray.700', 'gray.300')}
+            mr={2}
+          >
+            {format(parseISO(frontMatter.publishedAt), 'MMMM, yyyy')}
+          </Text>
+          {frontMatter.tags.map((tag, i) => (
+            <Badge key={i} m={1} colorScheme="blue">
+              {tag}
+            </Badge>
+          ))}
         </Flex>
 
         <Box w="full" lineHeight="1.75" maxW="65ch">
