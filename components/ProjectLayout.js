@@ -60,7 +60,7 @@ const ProjectLayout = ({ children, frontMatter }) => {
 
         <HStack spacing={4} my={8}>
           <Button
-            onClick={() => router.push('/projects')}
+            onClick={() => router.back()}
             variant="solid"
             leftIcon={<FaChevronRight />}
           >

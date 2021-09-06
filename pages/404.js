@@ -17,7 +17,7 @@ const Custom404Page = () => {
       <Button
         colorScheme="blue"
         rightIcon={<FaChevronRight />}
-        onClick={() => router.push('/')}
+        onClick={() => router.back()}
       >
         Go back
       </Button>
