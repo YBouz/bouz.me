@@ -20,7 +20,7 @@ const Hero = ({ ...rest }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Stack spacing={8} justify="center" align="flex-start" {...rest}>
+    <Stack spacing={8} justify="center" align="flex-start" maxW="3xl" {...rest}>
       <SlideFade
         in={true}
         transition={{ enter: { duration: 0.4, delay: 0.7 } }}
@@ -38,7 +38,7 @@ const Hero = ({ ...rest }) => {
           />
           <Text
             position="relative"
-            color="twitter.500"
+            color="blue.500"
             fontSize="xl"
             fontWeight="medium"
             zIndex={1}
@@ -70,12 +70,12 @@ const Hero = ({ ...rest }) => {
       >
         <List spacing={2} maxW="70ch">
           <ListItem>
-            <ListIcon as={FaGraduationCap} color="twitter.600" />
-            Currently approaching my graduation with a Bachelor's in Computer
-            Science from the American University of Sharjah
+            <ListIcon as={FaGraduationCap} color="blue.600" />
+            Approaching my graduation with a Bachelor's in Computer Science from
+            the American University of Sharjah.
           </ListItem>
           <ListItem>
-            <ListIcon as={FaRocket} color="twitter.300" />
+            <ListIcon as={FaRocket} color="blue.300" />
             Learning and practicing through industry projects and side-projects.
           </ListItem>
         </List>

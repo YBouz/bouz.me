@@ -80,7 +80,7 @@ const Header = () => {
               <Button
                 key={i}
                 variant="ghost"
-                colorScheme={router.pathname == data.href ? 'twitter' : 'gray'}
+                colorScheme={router.pathname == data.href ? 'blue' : 'gray'}
                 onClick={() => router.push(data.href)}
               >
                 {data.text}

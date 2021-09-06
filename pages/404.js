@@ -15,7 +15,7 @@ const Custom404Page = () => {
       </Heading>
 
       <Button
-        colorScheme="twitter"
+        colorScheme="blue"
         rightIcon={<FaChevronRight />}
         onClick={() => router.push('/')}
       >

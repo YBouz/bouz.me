@@ -19,7 +19,7 @@ const ProjectItem = ({
   live,
   github,
   tags,
-  publishedAt,
+  // publishedAt,
   slug
 }) => {
   const router = useRouter();

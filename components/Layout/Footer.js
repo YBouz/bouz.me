@@ -25,7 +25,7 @@ const Footer = () => {
         <Text fontSize="sm" color="gray" mb={4}>
           {/* &copy; {new Date().getFullYear()} */}
           Designed & Built by{' '}
-          <Text as="span" color="twitter.500">
+          <Text as="span" color="blue.500">
             Youssef Bouz
           </Text>
         </Text>

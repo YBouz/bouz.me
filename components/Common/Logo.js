@@ -13,7 +13,7 @@ const Logo = () => {
       <Heading
         size="md"
         letterSpacing="wider"
-        color="twitter.500"
+        color="blue.500"
         cursor="pointer"
         _hover={{
           transform: 'scale(1.4)',
