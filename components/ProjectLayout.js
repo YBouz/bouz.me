@@ -67,14 +67,16 @@ const ProjectLayout = ({ children, frontMatter }) => {
             {'Go Back'}
           </Button>
 
-          <IconButton
-            as="a"
-            href={frontMatter.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            icon={<FaExternalLinkAlt />}
-            variant="ghost"
-          />
+          {frontMatter.live && (
+            <IconButton
+              as="a"
+              href={frontMatter.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={<FaExternalLinkAlt />}
+              variant="ghost"
+            />
+          )}
 
           {frontMatter.github && (
             <IconButton

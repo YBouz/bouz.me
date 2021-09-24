@@ -55,12 +55,14 @@ const ProjectItem = ({
               GitHub
             </Button>
           )}
-          <Button
-            onClick={() => router.push(live)}
-            leftIcon={<FaExternalLinkAlt />}
-          >
-            Preview
-          </Button>
+          {live && (
+            <Button
+              onClick={() => router.push(live)}
+              leftIcon={<FaExternalLinkAlt />}
+            >
+              Preview
+            </Button>
+          )}
         </HStack>
       </Stack>
     </Link>
