@@ -43,13 +43,3 @@ const Container = ({ children, ...customMeta }) => {
 };
 
 export default Container;
-
-{
-  /* <Flex
-  flexDir="column"
-  justify="center"
-  alignItems="start"
-  maxW="2xl"
-  mx="auto"
-></Flex>; */
-}
