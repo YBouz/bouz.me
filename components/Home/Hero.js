@@ -70,9 +70,9 @@ const Hero = ({ ...rest }) => {
       >
         <List spacing={2} maxW="70ch">
           <ListItem>
-            <ListIcon as={FaGraduationCap} color="blue.600" />
-            Approaching my graduation with a Bachelor's in Computer Science from
-            the American University of Sharjah.
+            <ListIcon as={FaGraduationCap} color="blue.300" />
+            Bachelor's in Computer Science from the American University of
+            Sharjah.
           </ListItem>
           <ListItem>
             <ListIcon as={FaRocket} color="blue.300" />

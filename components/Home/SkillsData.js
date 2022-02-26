@@ -10,7 +10,8 @@ import {
   FaMagic,
   FaCss3,
   FaHtml5,
-  FaHashtag
+  FaHashtag,
+  FaAws
 } from 'react-icons/fa';
 import { SiDjango, SiNextDotJs } from 'react-icons/si';
 import { CgDesignmodo } from 'react-icons/cg';
@@ -95,5 +96,25 @@ export const skillsData = [
     name: 'Vuforia Engine',
     icon: <FaMagic fontSize="20px" />,
     url: 'https://developer.vuforia.com/'
+  },
+  {
+    name: 'AWS Amplify',
+    icon: <FaAws fontSize="20px" />,
+    url: 'https://aws.com'
+  },
+  {
+    name: 'AWS Cognito',
+    icon: <FaAws fontSize="20px" />,
+    url: 'https://aws.com'
+  },
+  {
+    name: 'AWS DynamoDB',
+    icon: <FaAws fontSize="20px" />,
+    url: 'https://aws.com'
+  },
+  {
+    name: 'AWS IoT Core',
+    icon: <FaAws fontSize="20px" />,
+    url: 'https://aws.com'
   }
 ];

@@ -1,12 +1,10 @@
 import {
   Divider,
-  Flex,
   Heading,
   SimpleGrid,
   SlideFade,
   Stack,
-  Text,
-  VStack
+  Text
 } from '@chakra-ui/react';
 
 import { getAllFilesFrontMatter } from '@/lib/mdx';
