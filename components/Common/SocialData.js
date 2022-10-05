@@ -21,10 +21,10 @@ export const SocialData = [
     label: 'Twitter',
     href: 'https://twitter.com/YBooouz',
     icon: <FaTwitter />
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/YBooouz/',
+    icon: <FaInstagram />
   }
-  // {
-  //   label: 'Instagram',
-  //   href: 'https://www.instagram.com/YBooouz/',
-  //   icon: <FaInstagram />
-  // }
 ];

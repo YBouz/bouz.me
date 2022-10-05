@@ -1,11 +1,5 @@
 import Link from 'next/link';
 import { Heading } from '@chakra-ui/react';
-import styled from '@emotion/styled';
-
-const Bracket = styled.span`
-  color: #8f9094;
-  font-weight: 'medium';
-`;
 
 const Logo = () => {
   return (
@@ -20,7 +14,7 @@ const Logo = () => {
           transition: 'all 0.4s ease-in-out'
         }}
       >
-        <Bracket>&#123;</Bracket> YB <Bracket>&#125;</Bracket>
+        YB
       </Heading>
     </Link>
   );

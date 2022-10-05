@@ -52,7 +52,7 @@ const Header = () => {
 
   return (
     <Flex
-      as="header"
+      as="nav"
       bg={scrollNav ? bg : 'transparent'}
       w="full"
       p={4}
@@ -65,7 +65,6 @@ const Header = () => {
       transition="0.6s all ease-out"
     >
       <Flex
-        as="nav"
         w="full"
         maxW={{ base: '80vw', md: '70vw' }}
         alignItems="center"
@@ -82,6 +81,7 @@ const Header = () => {
                 variant="ghost"
                 colorScheme={router.pathname == data.href ? 'blue' : 'gray'}
                 onClick={() => router.push(data.href)}
+                isDisabled
               >
                 {data.text}
               </Button>
@@ -120,6 +120,7 @@ const Header = () => {
                         key={i}
                         variant="ghost"
                         onClick={() => router.push(data.href)}
+                        isDisabled
                       >
                         {data.text}
                       </Button>

@@ -3,6 +3,7 @@ import {
   ButtonGroup,
   Heading,
   Image,
+  Link,
   List,
   ListIcon,
   ListItem,
@@ -68,15 +69,25 @@ const Hero = ({ ...rest }) => {
         in={true}
         transition={{ enter: { duration: 0.4, delay: 0.9 } }}
       >
-        <List spacing={2} maxW="70ch">
+        <List spacing={2} maxW="70ch" fontSize={'lg'}>
           <ListItem>
             <ListIcon as={FaGraduationCap} color="blue.300" />
-            Bachelor's in Computer Science from the American University of
-            Sharjah.
+            Bachelor's of Computer Science from American University of Sharjah
           </ListItem>
           <ListItem>
             <ListIcon as={FaRocket} color="blue.300" />
-            Learning and practicing through industry projects and side-projects.
+            Founder of{' '}
+            <Link
+              isExternal
+              href="https://dupals.io"
+              fontWeight={'medium'}
+              color={'blue.300'}
+              _hover={{
+                color: 'blue.500'
+              }}
+            >
+              Dupals NFT
+            </Link>
           </ListItem>
         </List>
       </SlideFade>
